@@ -1,0 +1,26 @@
+extends layout.pug
+
+block append scripts 
+    script(src="/shop.js")
+
+block append content
+    h1.text-center= 'Shop'
+    .row.justify-content-center.align-items-center
+        div 
+            each item in items
+                form(id=`${item.id}`).row.justify-content-center.align-items-center
+                    .col-2
+                        img(srcset=item.imgUrl width='100px')
+                    .col-5
+                        h3= item.name
+                        p= item.description
+                    .col-1
+                        p= item.price + '€'
+                    .col-2
+                        input.form-control(type='number' id=`item-quantity` name=`item-quantity` step='1')
+                    .col-2
+                        button.btn.btn-primary(type='submit') Add to Cart
+    .row.justify-content-center
+        h2(id='cartMessage')
+        
+            

@@ -1,0 +1,18 @@
+extends layout.pug
+
+block append scripts 
+  script(src="/login.js")
+
+block append content
+  h1.text-center= 'Welcome to the Shopping App'
+  .container
+    .row.justify-content-center
+      form(id='login')
+        .form-group.col-12
+          label(for='InputEmail') Email Adress:
+          input(type='email' class='form-control' id='email' name='email')
+        .form-group.col-12
+          label(for='InputPassword') Password:
+          input(type='password' class='form-control' id='password' name='password')
+        .form-group.col-12
+          button.btn.btn-primary(type='submit') Login

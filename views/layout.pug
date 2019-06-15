@@ -1,0 +1,23 @@
+html
+    head
+        title Shopping Cart Page
+        block scripts
+            script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+            script(src='/cookie.js')
+        block stylesheets
+            link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+    body
+        .container 
+        div.row
+            div.col-2
+                ul.nav.nav-pills.nav-stacked
+                    li.active.nav-item(role='presentation')
+                        a.nav-link(href='/api/') Home
+                    li.nav-item(role='presentation')
+                        a.nav-link(href='/api/register') Register
+                    li.nav-item(role='presentation')
+                        a.nav-link(href='/api/shop') Shop
+                        li.nav-item(role='presentation')
+                        a.nav-link(href='/api/shop/cart') Cart
+            div.col-10
+                block content                        
